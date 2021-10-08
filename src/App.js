@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { uuid } from 'uuidv4';
 import ContactDetails from './components/ContactDetails'
 import EditContact from './components/EditContact'
+import LoginPage from './components/LoginPage'
 // import store from './redux/store'
 
 
@@ -35,6 +36,16 @@ function App() {
     setContacts(newContactList);
   }
 
+  const loginHandler = (loginData) => {
+    const checkData = contacts.map((contact) => {
+      return (contact.name === loginData.name && contact.email === loginData.email) ? loginData : ""
+    })
+    if (checkData) {
+      alert("matched")
+    }
+    else { alert("not matched") }
+  }
+
   useEffect(() => {
     const retrieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
     if (retrieveContacts)
@@ -56,6 +67,7 @@ function App() {
             getContactId={removeContactHandler} />} />
           <Route path="/contact/:id" component={ContactDetails} />
           <Route path="/edit/:id" render={props => <EditContact {...props} updateContact={updateContactHandler} />} />
+          <Route path="/login" render={props => <LoginPage {...props} getlogindata={loginHandler} />} />
         </Switch>
       </Router>
     </div >

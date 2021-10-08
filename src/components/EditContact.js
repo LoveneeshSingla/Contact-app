@@ -13,6 +13,10 @@ class EditContacts extends React.Component {
     }
     update = (e) => {
         e.preventDefault();
+        if (this.state.name === "" || this.state.email === "") {
+            alert("Please fill all Fields")
+            return
+        }
         this.props.updateContact(this.state);
         this.setState({ name: "", email: "" })
         this.props.history.push("/")
