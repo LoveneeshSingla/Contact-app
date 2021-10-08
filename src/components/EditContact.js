@@ -4,21 +4,18 @@ class EditContacts extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(props)
+        const { id, name, email } = props.location.state.contact
+        this.state = {
+            id,
+            name,
+            email,
+        }
     }
-    state = {
-        name: "",
-        email: ""
-    }
-
     update = (e) => {
         e.preventDefault();
-        if (this.state.name === "" && this.state.email === "") {
-            alert("All fields are mandatory")
-            return
-        }
-        this.props.addContact(this.state);
+        this.props.updateContact(this.state);
         this.setState({ name: "", email: "" })
+        this.props.history.push("/")
     }
 
     render() {

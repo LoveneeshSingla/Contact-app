@@ -5,7 +5,8 @@ import ContactList from './components/ContactList';
 import Header from './components/Header'
 import { useState, useEffect } from 'react';
 import { uuid } from 'uuidv4';
-
+import ContactDetails from './components/ContactDetails'
+import EditContact from './components/EditContact'
 
 function App() {
 
@@ -15,6 +16,12 @@ function App() {
 
   const addContactHandler = (contact) => {
     setContacts([...contacts, { id: uuid(), ...contact }])
+  }
+
+  const updateContactHandler = (contact1) => {
+    setContacts(contacts.map((contact) => {
+      return contact.id === contact1.id ? { ...contact1 } : contact
+    }))
   }
 
   const removeContactHandler = (id) => {
@@ -43,6 +50,8 @@ function App() {
           <Route path="/add" render={props => <AddContacts {...props} addContact={addContactHandler} />} />
           <Route path="/" exact render={props => <ContactList {...props} contacts={contacts}
             getContactId={removeContactHandler} />} />
+          <Route path="/contact/:id" component={ContactDetails} />
+          <Route path="/edit/:id" render={props => <EditContact {...props} updateContact={updateContactHandler} />} />
         </Switch>
       </Router>
     </div >
