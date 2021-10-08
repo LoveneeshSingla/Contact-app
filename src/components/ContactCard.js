@@ -2,16 +2,16 @@ import { Link } from 'react-router-dom'
 const ContactCard = (props) => {
     const { id, name, email } = props.contact
     return (
-        <div style={{ "display": "flex" }}>
+        <div style={{ "display": "flex", "justifyContent": "space-between", "width": "100%" }}>
             <div>
                 <Link to={{ pathname: "/contact/" + id, state: { contact: props.contact } }}>
-                    <h4>{name}</h4>
-                    <h5>{email}</h5>
+                    <h4 style={{ "margin": "15px 0px" }}>{name}</h4>
+                    <h5 style={{ "margin": "0px 0px" }}>{email}</h5>
                 </Link>
             </div>
-            <div>
+            <div className="upDelBtn">
                 <Link to={{ pathname: "/edit/" + id, state: { contact: props.contact } }}><button>Update</button></Link>
-                <button onClick={() => { props.contactId(id) }}>Delete</button>
+                <button className="delBtn" onClick={() => { props.contactId(id) }}>Delete</button>
             </div>
         </div>
     )

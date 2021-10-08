@@ -7,6 +7,10 @@ import { useState, useEffect } from 'react';
 import { uuid } from 'uuidv4';
 import ContactDetails from './components/ContactDetails'
 import EditContact from './components/EditContact'
+// import store from './redux/store'
+
+
+
 
 function App() {
 

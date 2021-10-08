@@ -3,6 +3,30 @@
 }
 
 .inputsstyle {
-  padding: 5px 80px;
+  padding: 5px 140px;
   margin: 4px 0;
+}
+
+.header {
+  width: 30%;
+  text-align: center;
+}
+
+.contactListNavBar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.addContactsBtn {
+  margin: 15px;
+  padding: 5px 10px;
+}
+
+.upDelBtn {
+  margin: 25px;
+}
+
+.delBtn {
+  margin: 0 0 0 4px;
 }

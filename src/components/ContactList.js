@@ -22,12 +22,12 @@ const ContactList = (props) => {
 
 
     return (
-        <div>
-            <div>
+        <div style={{ "width": "30%" }}>
+            <div className="contactListNavBar">
                 <h3>Contact List</h3>
-                <Link to="/add"><button>Add Contacts</button></Link>
-                {retrieveContacts}
+                <Link to="/add"><button className="addContactsBtn">Add Contacts</button></Link>
             </div>
+            <div>{retrieveContacts}</div>
         </div>
     )
 }
