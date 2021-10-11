@@ -8,16 +8,13 @@ import { uuid } from 'uuidv4';
 import ContactDetails from './components/ContactDetails'
 import EditContact from './components/EditContact'
 import LoginPage from './components/LoginPage'
+import WelcomePage from './components/WelcomePage'
 // import store from './redux/store'
-
-
-
 
 function App() {
 
   const [contacts, setContacts] = useState([]);
   const LOCAL_STORAGE_KEY = "contacts"
-
 
   const addContactHandler = (contact) => {
     setContacts([...contacts, { id: uuid(), ...contact }])
@@ -37,13 +34,15 @@ function App() {
   }
 
   const loginHandler = (loginData) => {
-    const checkData = contacts.map((contact) => {
-      return (contact.name === loginData.name && contact.email === loginData.email) ? loginData : ""
+    const checkData = contacts.filter((contact) => {
+      return (contact.name === loginData.name && contact.email === loginData.email)
     })
-    if (checkData) {
+    if (checkData.length === 1) {
       alert("matched")
     }
-    else { alert("not matched") }
+    else {
+      alert("not Matched")
+    }
   }
 
   useEffect(() => {
@@ -68,6 +67,7 @@ function App() {
           <Route path="/contact/:id" component={ContactDetails} />
           <Route path="/edit/:id" render={props => <EditContact {...props} updateContact={updateContactHandler} />} />
           <Route path="/login" render={props => <LoginPage {...props} getlogindata={loginHandler} />} />
+          <Route path="/welcome" render={props => { <WelcomePage {...props} /> }} />
         </Switch>
       </Router>
     </div >

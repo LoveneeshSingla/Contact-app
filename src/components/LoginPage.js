@@ -4,7 +4,6 @@ const LoginPage = (props) => {
     // const [name, setName] = useState("")
     // const [email, setEmail] = useState("")
     const [loginData, setLoginData] = useState({ name: '', email: '' })
-
     const Match = (e) => {
         e.preventDefault();
         if (loginData.name === "" || loginData.email === "") {
@@ -12,7 +11,6 @@ const LoginPage = (props) => {
             return
         }
         props.getlogindata(loginData)
-
     }
 
     const setName = (e, key) => {
