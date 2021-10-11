@@ -22,12 +22,15 @@ const ContactList = (props) => {
 
 
     return (
-        <div style={{ "width": "30%" }}>
-            <div className="contactListNavBar">
+        <div style={{ "width": "100%", "padding": "8px 5px 0 5px", "backgroundColor": "mintcream" }}>
+            <div className="contactListNavBarTitle">
                 <h3>Contact List</h3>
-                <Link to="/login"><button>Login</button></Link>
+            </div>
+            <div className="contactListNavBarMenu">
+                <Link to="/login"><button className="loginBtn">Login</button></Link>
                 <Link to="/add"><button className="addContactsBtn">Add Contacts</button></Link>
             </div>
+
             <div>{retrieveContacts}</div>
         </div>
     )

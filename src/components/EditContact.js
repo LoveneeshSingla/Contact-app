@@ -25,16 +25,21 @@ class EditContacts extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.update}>
-                    <input type="text" className="inputsstyle" placeholder="Enter your name"
-                        value={this.state.name}
-                        onChange={(e) => this.setState({ name: e.target.value })}
-                    /><br />
-                    <input type="text" className="inputsstyle" placeholder="Enter your email"
-                        value={this.state.email}
-                        onChange={(e) => this.setState({ email: e.target.value })} /><br />
-                    <button className="addbtn">update</button>
-                </form>
+                <div style={{ "text-align": "center" }}><h1>Update your contacts Here</h1><hr /></div>
+                <div className="addContactsDiv">
+                    <form onSubmit={this.update}>
+                        <strong><label>Enter your Name: -</label></strong><br />
+                        <input type="text" className="inputsstyle"
+                            value={this.state.name}
+                            onChange={(e) => this.setState({ name: e.target.value })}
+                        /><br />
+                        <strong><label>Enter your Email: -</label></strong><br />
+                        <input type="text" className="inputsstyle"
+                            value={this.state.email}
+                            onChange={(e) => this.setState({ email: e.target.value })} /><br />
+                        <button className="addbtn">update</button>
+                    </form>
+                </div>
             </div>
         )
     }

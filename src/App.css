@@ -1,5 +1,7 @@
 .addbtn {
-  padding: 5px 12px;
+  padding: 5px 30px;
+  cursor: pointer;
+  margin: 10px 0 0 0;
 }
 
 .inputsstyle {
@@ -8,26 +10,77 @@
   text-align: left;
 }
 
-.header {
-  width: 30%;
-  text-align: center;
+.mainDiv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 5px solid Black;
+  width: 40%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
 }
 
-.contactListNavBar {
+.contactDetailsDiv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.header {
+  text-align: center;
+  margin: -19px;
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 8px 0 1px 0;
+}
+.addContactsDiv {
+  margin: 50px 65px;
+}
+.contactListNavBarTitle {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 50%;
+  float: left;
 }
 
-.addContactsBtn {
-  margin: 15px;
+.contactListNavBarMenu {
+  display: flex;
+  width: 50%;
+  justify-content: right;
+}
+
+.loginBtn {
+  margin: 15px 2px;
   padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.addContactsBtn {
+  margin: 15px 23px 0px 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .upDelBtn {
   margin: 25px;
 }
 
+.background {
+  background-color: mintcream;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 5px;
+  border: 2px solid darkmagenta;
+}
+
 .delBtn {
   margin: 0 0 0 4px;
+  cursor: pointer;
+  border-radius: 5px;
 }

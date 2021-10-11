@@ -17,7 +17,17 @@ function App() {
   const LOCAL_STORAGE_KEY = "contacts"
 
   const addContactHandler = (contact) => {
-    setContacts([...contacts, { id: uuid(), ...contact }])
+    const checkData = contacts.filter((contact1) => {
+      return (contact1.email === contact.email)
+    })
+    if (checkData.length === 1) {
+      alert("Email id is already existed")
+
+    }
+    else {
+      setContacts([...contacts, { id: uuid(), ...contact }])
+    }
+
   }
 
   const updateContactHandler = (contact1) => {
@@ -38,10 +48,11 @@ function App() {
       return (contact.name === loginData.name && contact.email === loginData.email)
     })
     if (checkData.length === 1) {
-      alert("matched")
+      alert("Welcome to React World")
+
     }
     else {
-      alert("not Matched")
+      alert("something is wrong")
     }
   }
 
@@ -57,17 +68,19 @@ function App() {
 
 
   return (
-    <div>
+    <div className="mainDiv">
       <Router>
         <Header />
         <Switch>
-          <Route path="/add" render={props => <AddContacts {...props} addContact={addContactHandler} />} />
-          <Route path="/" exact render={props => <ContactList {...props} contacts={contacts}
-            getContactId={removeContactHandler} />} />
-          <Route path="/contact/:id" component={ContactDetails} />
-          <Route path="/edit/:id" render={props => <EditContact {...props} updateContact={updateContactHandler} />} />
-          <Route path="/login" render={props => <LoginPage {...props} getlogindata={loginHandler} />} />
-          <Route path="/welcome" render={props => { <WelcomePage {...props} /> }} />
+          <div className="background">
+            <Route path="/add" render={props => <AddContacts {...props} addContact={addContactHandler} />} />
+            <Route path="/" exact render={props => <ContactList {...props} contacts={contacts}
+              getContactId={removeContactHandler} />} />
+            <Route path="/contact/:id" component={ContactDetails} />
+            <Route path="/edit/:id" render={props => <EditContact {...props} updateContact={updateContactHandler} />} />
+            <Route path="/login" render={props => <LoginPage {...props} getlogindata={loginHandler} />} />
+            <Route path="/welcome" render={props => { <WelcomePage {...props} /> }} />
+          </div>
         </Switch>
       </Router>
     </div >
