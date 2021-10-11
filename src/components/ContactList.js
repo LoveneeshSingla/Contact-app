@@ -22,7 +22,7 @@ const ContactList = (props) => {
 
 
     return (
-        <div style={{ "width": "100%", "padding": "8px 5px 0 5px", "backgroundColor": "mintcream" }}>
+        <div style={{ "width": "100%", "padding": "8px 5px 0 5px", "backgroundColor": "White" }}>
             <div className="contactListNavBarTitle">
                 <h3>Contact List</h3>
             </div>

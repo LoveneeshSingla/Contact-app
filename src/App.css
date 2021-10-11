@@ -19,6 +19,7 @@
   height: 60%;
   transform: translate(-50%, -50%);
   overflow-y: scroll;
+  border-radius: 8px;
 }
 
 .contactDetailsDiv {
@@ -56,12 +57,16 @@
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  background-color: darkOrange;
+  color: black;
 }
 .addContactsBtn {
   margin: 15px 23px 0px 5px;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
+  background-color: darkslategrey;
 }
 
 .upDelBtn {
@@ -69,18 +74,19 @@
 }
 
 .background {
-  background-color: mintcream;
+  background-color: white;
   height: 100%;
-}
-
-button {
-  cursor: pointer;
-  border-radius: 5px;
-  border: 2px solid darkmagenta;
 }
 
 .delBtn {
   margin: 0 0 0 4px;
   cursor: pointer;
+  border-radius: 5px;
+  background-color: lightgoldenrodyellow;
+}
+
+.updateBtn {
+  background-color: forestgreen;
+  color: white;
   border-radius: 5px;
 }
