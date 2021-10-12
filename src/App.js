@@ -9,12 +9,15 @@ import ContactDetails from './components/ContactDetails'
 import EditContact from './components/EditContact'
 import LoginPage from './components/LoginPage'
 import WelcomePage from './components/WelcomePage'
+import { useDispatch } from 'react-redux';
+import { setContacts1 } from './redux/actions/contactActions';
 // import store from './redux/store'
 
 function App() {
 
   const [contacts, setContacts] = useState([]);
   const LOCAL_STORAGE_KEY = "contacts"
+  const dispatch = useDispatch();
 
   const addContactHandler = (contact) => {
     const checkData = contacts.filter((contact1) => {
@@ -56,10 +59,16 @@ function App() {
     }
   }
 
-  useEffect(() => {
+  const fetchContacts = () => {
     const retrieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (retrieveContacts)
+    if (retrieveContacts) {
       setContacts(retrieveContacts)
+      dispatch(setContacts1(retrieveContacts))
+    }
+  }
+
+  useEffect(() => {
+    fetchContacts();
   }, [])
 
   useEffect(() => {

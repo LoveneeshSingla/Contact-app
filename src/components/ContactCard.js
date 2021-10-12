@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 const ContactCard = (props) => {
+
     const { id, name, email } = props.contact
     return (
         <div>
             <div style={{ "display": "flex", "justifyContent": "space-between", "width": "100%" }}>
                 <div>
-                    <Link to={{
-                        pathname: "/contact/" + id,
-                        state: { contact: props.contact }
-                    }}
+                    <Link to={"/contact/" + id
+                        // state: {contact: props.contact }
+                    }
                         style={{ "textDecoration": "none" }}>
                         <h3 style={{ "margin": "15px 0px", "color": "contactLowerBlue" }}>
                             {name}</h3>
@@ -24,7 +24,7 @@ const ContactCard = (props) => {
                 </div>
             </div>
             <hr style={{ "marginRight": "12px" }}></hr>
-        </div>
+        </div >
     )
 }
 

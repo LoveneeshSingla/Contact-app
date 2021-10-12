@@ -1,9 +1,10 @@
-// import { combineReducers } from 'redux';
-// import { contactReducer } from './contactReducer'
+import { combineReducers } from 'redux';
+import { contactReducer, selectedProductReducer } from './contactReducer'
 
-// const reducers = combineReducers({
-//     allContacts: contactReducer,
-// })
+const reducers = combineReducers({
+    allContacts: contactReducer,
+    contact: selectedProductReducer,
+})
 
 
-// export default reducers;
+export default reducers;

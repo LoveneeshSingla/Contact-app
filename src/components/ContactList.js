@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
-
+import { useSelector } from 'react-redux';
 import ContactCard from "./ContactCard";
+
+
 
 const ContactList = (props) => {
 
+    const contacts = useSelector((state) => state.allContacts.contacts)
     const deleteContactId = (id) => {
         props.getContactId(id);
     }
@@ -13,7 +16,9 @@ const ContactList = (props) => {
 
     }
 
-    const retrieveContacts = props.contacts.map((contact) => {
+    // props.contacts
+    //  will also work here in map function because we all passing props from parents element also
+    const retrieveContacts = contacts.map((contact) => {
         return (
             <ContactCard contact={contact} contactId={deleteContactId}
                 editContact1={editContactId} key={contact.id} />
