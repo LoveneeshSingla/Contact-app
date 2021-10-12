@@ -20,7 +20,7 @@ class AddContacts extends React.Component {
 
     render() {
         return (
-            <div>
+            <div style={{ overflowY: "scroll" }}>
                 <div className="addYourContactsTitle"><h1>Add your contacts Here</h1><hr className="marginOfHrInTitle" /></div>
                 <div className="addContactsDiv">
                     <form onSubmit={this.add}>

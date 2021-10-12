@@ -20,10 +20,10 @@
   left: 50%;
   top: 50%;
   border: 2px solid Black;
+  overflow-y: auto;
   width: 40%;
   height: 60%;
   transform: translate(-50%, -50%);
-  overflow-y: scroll;
   border-radius: 10px;
   overflow-x: hidden;
 }
@@ -47,12 +47,13 @@
 }
 .header {
   text-align: center;
-  margin: -19px;
   position: relative;
+  margin: -19px;
   background-color: steelblue;
   color: white;
   padding: 8px 0 1px 0;
 }
+
 .addContactsDiv {
   margin: 50px 65px;
 }
