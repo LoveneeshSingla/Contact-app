@@ -22,9 +22,9 @@ const ContactList = (props) => {
 
 
     return (
-        <div style={{ "width": "100%", "padding": "8px 5px 0 5px", "backgroundColor": "White" }}>
+        <div style={{ "width": "100%", "padding": "25px 5px 0 5px" }} className="background">
             <div className="contactListNavBarTitle">
-                <h3>Contact List</h3>
+                <h3 style={{ "color": "indigo" }}>Contact List</h3>
             </div>
             <div className="contactListNavBarMenu">
                 <Link to="/login"><button className="loginBtn">Login</button></Link>

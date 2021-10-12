@@ -25,7 +25,8 @@ class EditContacts extends React.Component {
     render() {
         return (
             <div>
-                <div style={{ "text-align": "center" }}><h1>Update your contacts Here</h1><hr /></div>
+                <div className="addYourContactsTitle"><h1>Update your contacts Here</h1>
+                    <hr className="marginOfHrInTitle" /></div>
                 <div className="addContactsDiv">
                     <form onSubmit={this.update}>
                         <strong><label>Enter your Name: -</label></strong><br />
@@ -37,7 +38,8 @@ class EditContacts extends React.Component {
                         <input type="text" className="inputsstyle"
                             value={this.state.email}
                             onChange={(e) => this.setState({ email: e.target.value })} /><br />
-                        <button className="addbtn">update</button>
+                        <div className="buttonClass">
+                            <button className="addbtn">update</button></div>
                     </form>
                 </div>
             </div>

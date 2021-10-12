@@ -1,38 +1,55 @@
 .addbtn {
-  padding: 5px 30px;
+  padding: 7px 100px;
   cursor: pointer;
   margin: 10px 0 0 0;
+  color: white;
+  background-color: forestgreen;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 
 .inputsstyle {
-  padding: 5px 140px;
-  margin: 4px 0;
+  padding: 5px 10px;
+  margin: 6px 0 15px 0;
   text-align: left;
+  width: 93%;
 }
 
 .mainDiv {
   position: absolute;
   left: 50%;
   top: 50%;
-  border: 5px solid Black;
+  border: 2px solid Black;
   width: 40%;
   height: 60%;
   transform: translate(-50%, -50%);
   overflow-y: scroll;
-  border-radius: 8px;
+  border-radius: 10px;
+  overflow-x: hidden;
 }
-
+.addYourContactsTitle {
+  text-align: center;
+}
 .contactDetailsDiv {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.buttonClass {
+  width: 30%;
+  margin: 5px 24%;
+}
+
+.marginOfHrInTitle {
+  margin: -12px;
+}
 .header {
   text-align: center;
   margin: -19px;
   position: relative;
-  background-color: black;
+  background-color: steelblue;
   color: white;
   padding: 8px 0 1px 0;
 }

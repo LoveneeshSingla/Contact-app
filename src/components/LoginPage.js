@@ -22,7 +22,7 @@ const LoginPage = (props) => {
 
     return (
         <div>
-            <div style={{ "text-align": "center" }}><h1>Please Enter Your Details</h1><hr /></div>
+            <div className="addYourContactsTitle"><h1>Please Enter Your Details</h1><hr className="marginOfHrInTitle" /></div>
             < div className="addContactsDiv">
                 <form onSubmit={Match}>
                     <strong><label>Enter your Name: -</label></strong><br />
@@ -33,8 +33,8 @@ const LoginPage = (props) => {
                     <input className="inputsstyle" type="text"
                         value={loginData.email}
                         onChange={(e) => setName(e, 'email')} /><br />
-                    <div style={{ "width": "30%", "margin": "0px 40%" }}>
-                        <button style={{ "padding": "5px 30px" }}>Login</button>
+                    <div className="buttonClass">
+                        <button className="addbtn">Login</button>
                     </div>
                 </form>
             </div>
