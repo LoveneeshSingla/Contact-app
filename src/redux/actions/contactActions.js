@@ -14,6 +14,13 @@ export const selectedContact = (contact) => {
     }
 }
 
+export const updateContact = (contact) => {
+    return {
+        type: ActionTypes.UPDATE_CONTACT,
+        payload: contact
+    }
+
+}
 
 
 

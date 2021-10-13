@@ -18,9 +18,18 @@ export const contactReducer = (state = initialState, { type, payload }) => {
 
 
 export const selectedProductReducer = (state = initialState, { type, payload }) => {
-    console.log(payload, "payloadpayloadpayload")
     switch (type) {
         case ActionTypes.SELECTED_CONTACT:
+            return payload
+        default:
+            return state;
+    }
+}
+
+export const updateContactReducer = (state = initialState, { type, payload }) => {
+    console.log("updateContactReducer", payload)
+    switch (type) {
+        case ActionTypes.UPDATE_CONTACT:
             return payload
         default:
             return state;

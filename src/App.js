@@ -11,6 +11,7 @@ import LoginPage from './components/LoginPage'
 import WelcomePage from './components/WelcomePage'
 import { useDispatch } from 'react-redux';
 import { setContacts1 } from './redux/actions/contactActions';
+import { updateContact } from './redux/actions/contactActions'
 // import store from './redux/store'
 
 function App() {
@@ -29,15 +30,20 @@ function App() {
     }
     else {
       setContacts([...contacts, { id: uuid(), ...contact }])
+      dispatch(setContacts1(contacts))
     }
-
   }
+
 
   const updateContactHandler = (contact1) => {
     setContacts(contacts.map((contact) => {
       return contact.id === contact1.id ? { ...contact1 } : contact
     }))
   }
+  useEffect(() => {
+    dispatch(updateContact(contacts))
+    dispatch(setContacts1(contacts))
+  }, [contacts])
 
   const removeContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
